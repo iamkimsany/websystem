@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>동아리 가입</title>      
+    </head> 
+    <body>
+        <h2>ㅇㅇ 동아리 가입 양식</h2> 
+        <form>
+            <!--이름-->
+            <label for="username">이름</label>       
+            <input type="text" id="username" name="username"><br/>
+
+            <!--학부/학과-->
+            <label for="major">학부/학과</label>
+            <input list = "majors">
+            <datalist id="majors">
+                <option value="컴퓨터과학과"></option>
+                <option value="메디아학과"></option>
+                <option value="영문학과"></option>
+                <option value="경영학과"></option>
+            </datalist><br/>
+
+            <!--학년-->
+            <label for="year">학년</label>
+            <input type="radio" id="1year" name="year" value="1학년">
+            <label for="1year">1학년</label>
+            <input type="radio" id="2year" name="year" value="2학년">
+            <label for="2year">2학년</label>
+            <input type="radio" id="3year" name="year" value="3학년"> 
+            <label for="3year">3학년</label>
+            <input type="radio" id="4year" name="year" value="4학년"> 
+            <label for="4year">4학년</label><br/>
+
+            <!--학번-->
+            <label for="studentid">학번</label>
+            <input type="studentid" id="studentid" name="studentid"><br/>
+
+            <!--이메일-->
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email" placeholder="id@host"><br/>
+
+            <!--전화번호-->
+            <label for="phone">전화번호</label> 
+            <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"><br/>
+
+            <!--가입동기-->
+            <label for="message">가입동기</label> 
+            <textarea name="message" rows="2" cols="14"></textarea><br/>
+
+            <!--가입/최소 버턴-->
+            <input type="submit" value="가입하기">
+            <input type="reset" value="취소하기">
+        </form>
+    </body>
+</html>
