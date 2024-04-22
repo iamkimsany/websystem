@@ -1,0 +1,158 @@
+.header {
+    background-color: rgb(29, 57, 123); 
+	color: rgb(163, 175, 216);
+	overflow: hidden;
+	margin-left:70px;
+	margin-right: 70px;
+	padding-top: 20px;
+	padding-left: 10px;
+}
+
+.header hgroup {
+    float: left; 
+    padding-left: 20px;
+}
+
+.header nav {
+    float: right; 
+	padding-top: 50px;
+	margin-right: 10px;
+}
+
+.nav li a{
+	display: block;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+
+.nav > li {
+	padding-left: 70px;
+	padding-right: 70px;
+}
+
+.submenu {
+	display: none;
+	background-color: rgb(29, 57, 123, 0.9);
+	list-style-type: none;
+	position: absolute;
+	z-index: 1;
+	margin-left: -40px;
+}
+
+.submenu li {
+    text-align: center;
+	padding-left: 40px;
+	padding-right: 30px;
+	margin-right: 5px;
+}
+	
+.submenu a{
+	margin-left: -30px;
+}
+
+.nav-item:hover > .submenu {
+	display: block;
+}
+
+.nav-item:hover {
+	background-color:  white;
+}
+
+.nav-item:hover > a{
+	color:  rgb(29, 57, 123);
+}
+
+.login {
+    float: left;
+    background-color:  rgb(29, 57, 123);
+    margin-left: 70px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 600px;
+    color:  white;
+}
+
+.content {
+    overflow: hidden;
+}
+
+#ad {
+    width: 300px;
+    float: right;
+    margin-top: -758px; 
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+}
+
+#ad .card {
+     width: 200px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-left: 30px;
+    background-color: rgb(254, 254, 224);
+}
+
+.card {
+    width: 870px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-top: 15px;
+    margin-right: 10px;
+    border: 2px solid  rgb(29, 57, 123);
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card img {
+    float: left; 
+    margin-right: 10px;
+}
+
+#post {
+    display: flex; 
+    flex-direction: column;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#foot li {
+    display: inline;
+    margin-left: 110px;
+    margin-right: 110px;
+}
+
+#foot a{
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    background-color:  rgb(29, 57, 123);
+    margin-left:70px;
+    margin-right: 70px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+@media only screen and (min-width: 601px) {
+    .card {
+        width: 900px; /* Устанавливаем ширину карты в 80% от родительского контейнера */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header nav {
+        float: none;/* Стили для мобильных устройств */
+    }
+    .card {
+        width: 40%;
+        max-width: none;
+    }
+}
