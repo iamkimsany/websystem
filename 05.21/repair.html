@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        nav {
+    background-color: #1F5F3F;
+}
+
+.navbar-brand img {
+    text-align: left;
+
+}
+
+.nav-link {
+    color: rgb(255, 255, 255, 0.5);
+    margin-left: 10px;
+}
+.nav-link.active {
+    color: white; /* Ensures active link color is white */
+}
+        body {
+            font-family: 'Century Gothic', Arial, Helvetica, sans-serif;
+        }
+        .main h3{
+            color: #1F5F3F;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            margin-left: 20px;
+        }
+        .main p{
+            text-align: left;
+            padding-left: 30px;
+        }
+        .main1 {
+            background-color: #e7e7e7;
+        }
+        .btn {
+    background-color: rgb(50, 47, 47);
+    border-radius: 10px; /* Optional: add border radius for rounded corners */
+    border: none;
+    color: white;
+}
+.btn:hover{
+    background-color: #1F5F3F;
+    color: white;
+}
+.btn.clicked{
+    background-color: #1F5F3F;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="img/IMG_2078-removebg-preview 4.png" alt="La Vue" style="width:100px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown">Catalog</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="eyewear.html">Eyewear</a></li>
+                        <li><a class="dropdown-item" href="accessor.html">Accessories</a></li>
+                        <li><a class="dropdown-item" href="contactlens.html">Contact Lenses</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Link</a></li>
+                        <li><a class="dropdown-item" href="#">Another link</a></li>
+                        <li><a class="dropdown-item" href="#">A third link</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Doctors</a>
+                </li>  
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Store</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">About</a>
+                </li> 
+            </ul>
+            <form class="d-flex ms-auto search-form">
+                <input class="form-control me-2" type="text" placeholder="Search">
+                <button class="btn btn-primary" type="button">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="padding-right: 20px;">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-light" type="button">
+                        <i class="bi bi-bag-fill"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid main">
+            <h3 class="text">Consultation</h3>
+            <p class="text" style="margin-bottom: 20px;">If you notice that your vision is deteriorating or you experience other eye problems, you should consult an ophthalmologist. An ophthalmologist is a doctor who specializes in diagnosing and treating eye diseases. They can check your vision, detect vision abnormalities such as myopia, hyperopia, astigmatism, and other eye conditions, and prescribe the necessary treatment. Treatment may include wearing glasses or contact lenses, using eye drops, undergoing hardware treatments, and other recommendations. Check the suitable date and <b>make reservation without registration!</b></p>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md">
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=UTC&bgcolor=%23616161&title=Consultation%20Day&src=c2FtYXRvdmFzYWJpbmE5M0BnbWFpbC5jb20&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=Y21oMG5nOGJucTRpcDZuczJzZTFkZWtqazFwcTRuYTdAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZnN0OTdpODc4bWRmdm5sZXJtNjg0czNhZ2o1bWg1OG1AaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=Z3I2ZTBjOXQwanRxb2l0OHQzcDQ0Y3N2NzQzdXFmMzlAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%2333B679&color=%23795548&color=%234285F4&color=%23C0CA33" style="border:solid 1px #777; display: flex; text-align: left; margin-left: 20px; margin-bottom: 40px;" width="600" height="600" frameborder="0" scrolling="no"></iframe>
+          </div>
+          <div class="col-md" style="text-align: left;"> <h2 style="color: #1F5F3F; padding-top: 100px;">Consultation Form</h2>
+            <form action="/action_page.php">
+                 <label for="name">Name:</label>
+                 <input type="text" class="form-control" id="name" name="name">
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" name="phone">
+
+                <label for="birthdaytime">Date:</label>
+                <input type="datetime-local" class="form-control" id="birthdaytime" name="birthdaytime">
+
+                <input class="form-check-input" type="checkbox" id="remember" name="remember">
+                <label class="form-check-label" for="remember">Checked the time</label>
+
+                <div style="text-align: center; padding: 50px;">
+                    <button type="button" class="btn btn-success">
+                        <a href="www.youtube.com">Submit</a>
+                    </button>
+                </div>
+            </form>
+          </div>
+        </div>  
+      </div>
+      
+</body>
+</html>

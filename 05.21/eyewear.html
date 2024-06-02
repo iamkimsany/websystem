@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smooth Text Animation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Century Gothic', Arial, Helvetica, sans-serif;
+    }
+
+    .gallery {
+      margin: 15px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .gallery:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+    }
+
+    .desc {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .text-price {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .price {
+      margin: 0;
+    }
+
+    nav {
+      background-color: #1F5F3F;
+    }
+
+    .navbar-brand img {
+      text-align: left;
+    }
+
+    .nav-link {
+      color: rgba(255, 255, 255, 0.5);
+      margin-left: 10px;
+    }
+
+    .nav-link.active {
+      color: white; /* Ensures active link color is white */
+    }
+    .form-control{
+    background-color: rgba(255, 255, 255, 0.5); /* 50% transparent white */
+    border-radius: 10px; /* Optional: add border radius for rounded corners */
+    border: none;
+}
+.btn {
+    background-color: rgb(50, 47, 47);
+    border-radius: 10px; /* Optional: add border radius for rounded corners */
+    border: none;
+    color: white;
+}
+.btn:hover{
+    background-color: #1F5F3F;
+    color: white;
+}
+.btn.clicked{
+    background-color: #1F5F3F;
+    color: white;
+}
+.badge {
+    font-size: 0.7rem;
+    border-radius: 50%;
+    text-align: center;
+    display: none;
+}
+    .subnav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .subnav li {
+      float: left;
+    }
+
+    .subnav li a {
+      display: block;
+      color: rgb(50, 47, 47);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .subnav li a:hover:not(.active) {
+      text-decoration-line: underline;
+    }
+
+    .subnav .active {
+      background-color: #1F5F3F;
+      color: white;
+    }
+
+    .btn {
+      background-color: rgb(50, 47, 47);
+      border-radius: 10px; /* Optional: add border radius for rounded corners */
+      border: none;
+      color: white;
+
+    }
+    .pagination .page-link {
+      color: #000000; /* Default link color */
+    }
+
+    .pagination .page-link:hover {
+      color: #000000; /* Link color on hover */
+      background-color: #e9ecef; 
+    }
+
+    .pagination .page-item.active .page-link {
+      background-color: #1F5F3F; /* Background color for active page */
+      border-color: #1F5F3F; /* Border color for active page */
+      color: white; /* Text color for active page */
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="lavue.html">
+        <img src="img/IMG_2078-removebg-preview 4.png" alt="La Vue" style="width:100px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown">Catalog</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="eyewear.html">Eyewear</a></li>
+              <li><a class="dropdown-item" href="#">Another link</a></li>
+              <li><a class="dropdown-item" href="#">A third link</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown">Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Link</a></li>
+              <li><a class="dropdown-item" href="#">Another link</a></li>
+              <li><a class="dropdown-item" href="#">A third link</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Doctors</a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link" href="#">Store</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li> 
+        </ul>
+        <form class="d-flex ms-auto search-form">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="button">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+        <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav ms-auto align-items-center">
+              <li class="nav-item">
+                  <a class="nav-link" href="#" style="padding-right: 20px;">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                  <button class="btn btn-outline-light" type="button" style="padding-right: 10px;" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                    <!-- Wishlist items will be appended here -->
+                      <i class="bi bi-bag-fill" id="mainBadge"></i>
+                      <span id="cartItemCount" class="badge bg-danger rounded-pill position-absolute translate-middle" style="margin-top: 15px; margin-left: 10px;">
+                    </span>
+                  </button>
+              </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <h1 style="padding-top: 30px; padding-left: 10px;">Eyewear</h1> 
+    <div class="subnav" style="padding-left: 10px;">
+      <ul>
+        <li><a href="#all">All</a></li>
+        <li><a href="active">Women</a></li>
+        <li><a href="active">Men</a></li>
+        <li><a href="active">Kids</a></li>
+        <li><a class="active">Sunglasses</a></li>
+      </ul>
+    </div>
+    <div class="flex-container">
+      <!-- Gallery Item 1 -->
+      <div class="gallery">
+        <img class="women" src="img/eyewears/Face A Face™ Glasses (1).jpeg" alt="Cinque Terre" width="600" height="300">
+        <div class="desc">
+          <div class="text-price">
+            <div class="name">FACE A FACE™ Glasses</div>
+            <h6 class="price">367,000 ₩</h6>
+          </div>
+          <button class="btn" type="button"><i class="bi bi-bag-fill"></i></button>
+        </div>
+      </div>
+      <!-- Gallery Item 2 -->
+      <div class="gallery">
+        <img class="women" src="img/eyewears/From_ Miu Miu.jpeg" alt="Forest" width="600" height="300">
+        <div class="desc">
+          <div class="text-price">
+            <div class="name">Miu Miu Glasses</div>
+            <h6 class="price">256,000 ₩</h6>
+          </div>
+          <button class="btn" type="button"><i class="bi bi-bag-fill"></i></button>
+        </div>
+      </div>
+      <!-- Gallery Item 3 -->
+      <div class="gallery">
+        <img class="women" src="img/eyewears/FACE A FACE™ GLASSES (3).jpeg" alt="Northern Lights" width="600" height="300">
+        <div class="desc">
+          <div class="text-price">
+            <div class="name">FACE A FACE™ Glasses</div>
+            <h6 class="price">304,000 ₩</h6>
+          </div>
+          <button class="btn" type="button"><i class="bi bi-bag-fill"></i></button>
+        </div>
+      </div>
+      <!-- Gallery Item 4 -->
+      <div class="gallery">
+        <img class="men" src="img/eyewears/LINDBERG™ glasses.jpeg" alt="Mountains" width="600" height="400">
+        <div class="desc">
+          <div class="text-price">
+            <div class="name">LINDBERG™ Glasses</div>
+            <h6 class="price">194,000 ₩</h6>
+          </div>
+          <button class="btn" type="button"><i class="bi bi-bag-fill"></i></button>
+        </div>
+      </div>
+      <!-- Gallery Item 5 -->
+      <div class="gallery">
+        <img class="men" src="img/eyewears/HENAU™ GLASSES (1).jpeg" alt="Mountains" width="600" height="400">
+        <div class="desc">
+          <div class="text-price">
+            <div class="name">HENAU™ Glasses</div>
+            <h6 class="price">235,000 ₩</h6>
+          </div>
+          <button class="btn" type="button"><i class="bi bi-bag-fill"></i></button>
+        </div>
+      </div>
+      <!-- Gallery Item 6 -->
+      <div class="gallery">
+        <img class="women" src="img/eyewears/Face A Face™ Glasses (1).jpeg" alt="Cinque Terre" width="600" height="300">
+        <div class="desc">
+          <div class="text-price">
+            <div class="name">FACE A FACE™ Glasses</div>
+            <h6 class="price">367,000 ₩</h6>
+          </div>
+          <button class="btn" type="button"><i class="bi bi-bag-fill"></i></button>
+        </div>
+      </div>
+      <!-- Gallery Item 7 -->
+      <div class="gallery">
+        <img class="women" src="img/eyewears/From_ Miu Miu.jpeg" alt="Forest" width="600" height="300">
+        <div class="desc">
+          <div class="text-price">
+            <div class="name">Miu Miu Glasses</div>
+            <h6 class="price">256,000 ₩</h6>
+          </div>
+          <button class="btn" type="button"><i class="bi bi-bag-fill"></i></button>
+        </div>
+      </div>
+      <!-- Gallery Item 8 -->
+      <div class="gallery">
+        <img class="women" src="img/eyewears/FACE A FACE™ GLASSES (3).jpeg" alt="Northern Lights" width="600" height="300">
+        <div class="desc">
+          <div class="text-price">
+            <div class="name">FACE A FACE™ Glasses</div>
+            <h6 class="price">304,000 ₩</h6>
+          </div>
+          <button class="btn" type="button"><i class="bi bi-bag-fill"></i></button>
+        </div>
+      </div>
+      <!-- Gallery Item 9 -->
+      <div class="gallery">
+        <img class="men" src="img/eyewears/LINDBERG™ glasses.jpeg" alt="Mountains" width="600" height="400">
+        <div class="desc">
+          <div class="text-price">
+            <div class="name">LINDBERG™ Glasses</div>
+            <h6 class="price">194,000 ₩</h6>
+          </div>
+          <button class="btn" type="button"><i class="bi bi-bag-fill"></i></button>
+        </div>
+      </div>
+      <!-- Gallery Item 10 -->
+      <div class="gallery">
+        <img class="men" src="img/eyewears/HENAU™ GLASSES (1).jpeg" alt="Mountains" width="600" height="400">
+        <div class="desc">
+          <div class="text-price">
+            <div class="name">HENAU™ Glasses</div>
+            <h6 class="price">235,000 ₩</h6>
+          </div>
+          <button class="btn" type="button"><i class="bi bi-bag-fill"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-3">
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  <div class="offcanvas offcanvas-start" id="demo">
+    <div class="offcanvas-header">
+      <h1 class="offcanvas-title">Wishlist</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" ></button>
+    </div>
+    <div class="offcanvas-body">
+      <p class="wishlistt" id="wishlist-container"></p>
+      <button class="btn btn-secondary" type="button" style="margin-top: 20px;" id="buy">Buy</button>
+    </div>
+  </div>
+
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let count = 0;
+        var badge = document.getElementById('cartItemCount');
+        var wishList = document.getElementById('mainBadge');
+        var itemName = ""; // Declare outside event listener
+        var itemPrice = ""; // Declare outside event listener
+
+        // Get all elements with class "bi-bag-fill"
+        const bagIcons = document.querySelectorAll(".gallery .bi-bag-fill");
+
+        // Iterate over each bag icon
+        bagIcons.forEach(icon => {
+            // Add click event listener to each bag icon
+            icon.addEventListener("click", function() {
+                count++; // Increment count
+                badge.style.display = 'inline';
+                badge.textContent = count; // Update count in the card
+
+                // Get item information
+                const galleryItem = icon.closest(".gallery");
+                itemName = galleryItem.querySelector(".name").textContent;
+                itemPrice = galleryItem.querySelector(".price").textContent;
+                const wishlistItem = document.createElement("div");
+                wishlistItem.classList.add("wishlist-item");
+                wishlistItem.innerHTML = `
+                    <span>${itemName}</span>
+                    <span>${itemPrice}</span>
+                `;
+                document.getElementById("wishlist-container").appendChild(wishlistItem);
+            });
+        });
+
+        wishList.addEventListener("click", function() {
+            if (itemName && itemPrice) { // Check if itemName and itemPrice are not empty
+               
+                document.getElementById("wishlist-container").style.display = 'inline';
+               
+            } else {
+                console.log("Item name or price is empty");
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>

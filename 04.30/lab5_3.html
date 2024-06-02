@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var result;
+        var name = prompt("이름을 입력하시오 ");
+        var age = prompt("나이를 입력하시오(숫자) ");
+        var height = prompt("키를 입력하시오(숫자) ");
+        var weight = prompt("체중을 입력하시오(숫자) ");
+        let info = function(age, weight, height){ 
+            var height_m = height / 100;
+            var kaup_index = weight / (height_m ** 2);
+            if (age >= 20) {
+                if (kaup_index <= 17.9) {
+                    result = "저체중";
+                } else if (kaup_index <= 23) {
+                    result = "표준체중";
+                } else if (kaup_index <= 30) {
+                    result = "과체중";
+                } else {
+                    result = "비만";
+                }
+            } else if (age >= 30) {
+                if (kaup_index <= 18.4) {
+                    result = "저체중";
+                } else if (kaup_index <= 24) {
+                    result = "표준체중";
+                } else if (kaup_index <= 30) {
+                    result = "과체중";
+                } else {
+                    result = "비만";
+                }
+            } else {
+                result = "나이가 적절하지 않습니다.";
+            }
+            document.write("<h1>이름: "+ name +"<br>");
+            document.write("나이: "+ age +"<br>");
+            document.write("키: "+ height +"<br>");
+            document.write("체중: "+ weight +"<br>");
+            document.write("당신은 "+ result+"("+kaup_index+")"+"입니다");
+        }
+        info(age, weight, height);
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>방문 카운트 쿠키</title>
+<script>
+function GetCookie (name) {
+	let pairs = document.cookie.split(";"); // 쿠키문자열을 ;을 경계로 분할
+	for(let i=0; i<pairs.length; i++) {
+		let pair = pairs[i].trim(); // 쿠키 앞뒤의 빈칸 제거
+		let unit = pair.split("=");
+		if(unit[0] == name)
+			return unescape(unit[1]);
+	}
+	return null;
+}
+function SetCookie (name, value, expireDate) {
+	let cookieStr = name + "=" + escape(value) + 
+        ((expireDate == null)?"":("; expires=" + expireDate.toUTCString()));
+        document.cookie = cookieStr;
+}
+function openCenter(doc, win, w, h){ 
+	var left = (screen.availWidth-w) / 2; // 팝업 창의 왼쪽 좌표
+	var top = (screen.availHeight-h) / 2; // 팝업 창의 위쪽 좌표
+	var opt = "left=" + left + ",top=" + top + ",width=" + w + ",height=" + h; window.open(doc, win, opt);
+}
+openCenter("notice.html","pop", 500, 400)
+</script>
+<style>
+    /* 팝업창 스타일 작성 */ 
+</style>
+</head>
+<body>
+    <h1>쿠키 테스트 하기</h1>
+    <hr>
+    <div>본문 내용 영역</div>
+    <div class="popup">
+        <div class="popup_contents">
+            <!--공지사항 내용 추가-->
+
+        </div>
+        <div class="btn">
+            <!-- "오늘 하루 보지 않기 " 버튼 추가-->
+            <!-- "Close" 버튼 추가-->
+			
+        </div>
+    </div>
+<script>
+	let username = GetCookie("username");
+	let count = GetCookie("count");
+    // 오늘 하루 보지 않기 기능을 위한 쿠키 추가
+	let expire = new Date (); // 현재 시간
+    // 오늘 하루 보지 않기 기능을 위한 쿠키 만료 시간 추가
+	if (username == null) {
+		count = 0;
+		username = prompt("이름을 입력해 주십시오.","");
+		if (username == null) {
+	    	alert("이름을 입력하시면 보다 나은 서비스를 제공받을 수 있습니다.");
+	    	username = "아무개";
+	  	} else {
+	    	expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000)); // 1년후 
+	    	SetCookie("username",username,expire);
+	  	}
+	}
+	count++;
+	expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000)); // 1년후 
+	SetCookie("count",count,expire);
+	document.write("<p>어서오십시오. "+username+"님의 "+count+"번째 방문을 환영합니다!");
+    
+    // 오늘 하루 보지 않기 기능 실행용 함수 작성
+    
+    // 팝업창 닫기 기능 실행용 함수 작성
+    
+    // 오늘 하루 보지 않기 기능 실행
+    
+</script>
+</body>
+</html>

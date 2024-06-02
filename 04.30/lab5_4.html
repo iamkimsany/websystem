@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div> 
+    <script>
+        var time = prompt("카운트다운 숫자를 입력하세요: ");
+
+        if (time === null || time === "") {
+            alert("올바른 숫자를 입력하세요.");
+        } else {
+            time = parseInt(time); 
+            const x = setInterval(myFunction, 1000); 
+
+            function myFunction() {
+                document.getElementById("demo").innerHTML = time;
+                time--;
+
+                if (time === 0) {
+                    clearInterval(x); 
+                    document.write("타이머 종료"); 
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+

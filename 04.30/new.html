@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #rect {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="rect"></div>
+    <h1 id="title"></h1>
+    <h1 id="spring" class="season">spring</h1>
+    <h1 id="summer" class="season">summer</h1>
+    <h1 id="autumn" class="season">autumn</h1>
+    <h1 id="winter" class="season">winter</h1>
+
+    <script>
+        let myRect = document.getElementById('rect');
+        myRect.addEventListener("mouseover", function(){
+            myRect.style.backgroundColor = 'green';
+            myRect.style.borderRadius = "50%";
+        });
+        myRect.addEventListener("mouseout", function(){
+            myRect.style.backgroundColor = '';
+            myRect.style.borderRadius = "";
+        });
+        myRect.addEventListener("click", function(){
+            myRect.style.backgroundColor = 'blue';
+            myRect.style.borderRadius = "50%";
+        });
+
+
+    </script>
+</body>
+</html>
