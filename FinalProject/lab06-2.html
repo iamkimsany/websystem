@@ -1,20 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>웹 프로젝트 결과물 보고서</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h2, h3 {
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-    <label for="firstText">first name:</label>
-    <input id="firstText"><br>
-    <label for="lastText">last name:</label>
-    <input id="lastText"><br>
-    <button id="submitBtn">submit</button>
-    <button id="cookieBtn">get cookies</button>
-    <script src="index.js"></script>
-</body>
-</html>
+
+    <h2>웹 프로젝트 결과물 보고서</h2>
+
+    <table>
+        <tr>
+            <th>프로젝트명</th>
+            <td>LaVue 웹사이트</td>
+        </tr>
+        <tr>
+            <th>팀 이름</th>
+            <td>KimSan Web Development Team</td>
+        </tr>
+        <tr>
+            <th>작성자</th>
+            <td>김사니</td>
+        </tr>
+        <tr>
+            <th>작성일</th>
+            <td>2024년 6월 18일</td>
+        </tr>
+        <tr>
+            <th>프로젝트 기간</th>
+            <td>2024년 5월 1일 - 2024년 6월 15일</td>
+        </tr>
+    </table>
+
+    <h3>목차</h3>
+    <ol>
+        <li>프로젝트 개요</li>
+        <li>프로젝트 목표</li>
+        <li>프로젝트 수행 절차</li>
+        <li>결과물 설명
+            <ul>
+                <li>주요 기능</li>
+                <li>화면 구성</li>
+                <li>기술 스택</li>
+            </ul>
+        </li>
+        <li>테스트 및 검증</li>
+        <li>결론 및 향후 계획</li>
+        <li>참고 자료</li>
+    </ol>
+
+    <h3>프로젝트 개요</h3>
+    <table>
+        <tr>
+            <th>프로젝트 배경</th>
+            <td>LaVue 웹사이트는 사용자들에게 현대적인 디자인과 직관적인 사용자 경험을 제공하는 것을 목표로 개발되었습니다. 이 프로젝트는 최신 웹 기술을 활용하여 사용자에게 최상의 경험을 제공하고자 하는 목적으로 시작되었습니다.</td>
+        </tr>
+        <tr>
+            <th>프로젝트 목적</th>
+            <td>LaVue 웹사이트는 사용자들이 다양한 기능을 쉽게 이용할 수 있도록 하여, 편리하고 효율적인 웹 서비스를 제공하는 것을 목적으로 합니다.</td>
+        </tr>
+    </table>
+
+    <h3>프로젝트 목표</h3>
+    <table>
+        <tr>
+            <th>주요 목표</th>
+            <td>
+                <ul>
+                    <li>직관적이고 반응형인 사용자 인터페이스 제공</li>
+                    <li>사용자가 쉽게 정보를 탐색하고 접근할 수 있는 구조 구현</li>
+                    <li>원활한 사용자 경험을 위한 성능 최적화</li>
+                    <li>다양한 브라우저와 기기에서의 호환성 확보</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <h3>프로젝트 수행 절차</h3>
+    <table>
+        <tr>
+            <th>기획 단계</th>
+            <td>
+                <ul>
+                    <li>사용자 요구사항 분석 및 기능 정의</li>
+                    <li>프로젝트 계획 수립 및 일정 관리</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>디자인 단계</th>
+            <td>
+                <ul>
+                    <li>와이어프레임 및 UI 디자인</li>
+                    <li>사용자 경험(UX) 고려한 사용자 흐름 설계</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>개발 단계</th>
+            <td>
+                <ul>
+                    <li>프론트엔드 개발 (HTML, CSS, JavaScript)</li>
+                    <li>백엔드 개발 및 연동 (필요 시)</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>테스트 단계</th>
+            <td>
+                <ul>
+                    <li>유닛 테스트 및 통합 테스트</li>
+                    <li>사용자 피드백 기반 버그 수정 및 기능 개선</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <h3>결과물 설명</h3>
+    <h4>6.1 주요 기능</h4>
+    <table>
+        <tr>
+            <th>기능</th>
+            <th>설명</th>
+        </tr>
+        <tr>
+            <td>회원가입 및 로그인</td>
+            <td>사용자가 이메일과 비밀번호로 회원가입하고 로그인할 수 있습니다.</td>
+        </tr>
+        <tr>
+            <td>팝업 기능</td>
+            <td>특정 이벤트 발생 시 팝업 창이 나타나도록 구현되었습니다.</td>
+        </tr>
+        <tr>
+            <td>정보 검색 및 탐색</td>
+            <td>사용자가 원하는 정보를 쉽게 검색하고 탐색할 수 있도록 검색 기능을 제공합니다.</td>
+        </tr>
+        <tr>
+            <td>반응형 디자인</td>
+            <td>다양한 기기에서 최적의 사용자 경험을 제공하기 위한 반응형 디자인이 적용되었습니다.</td>
+        </tr>
+    </table>
+
+    <h4>6.2 화면 구성</h4>
+    <table>
+        <tr>
+            <th>화면</th>
+            <th>설명</th>
+        </tr>
+        <tr>
+            <td>홈페이지</td>
+            <td>
+                <ul>
+                    <li>메인 배너: 최신 정보 및 주요 기능 소개</li>
+                    <li>검색 바: 사용자가 정보를 쉽게 검색할 수 있도록 지원</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>회원가입 및 로그인 페이지</td>
+            <td>간편한 회원가입 및 로그인 폼 제공</td>
+        </tr>
+        <tr>
+            <td>정보 탐색 페이지</td>
+            <td>사용자가 다양한 정보를 탐색할 수 있도록 카테고리별로 구성</td>
+        </tr>
+        <tr>
+            <td>팝업 기능</td>
+            <td>사용자 인터랙션을 유도하기 위한 팝업 창 제공</td>
+        </tr>
+    </table>
+
+    <h4>6.3 기술 스택</h4>
+    <table>
+        <tr>
+            <th>구성 요소</th>
+            <th>내용</th>
+        </tr>
+        <tr>
+            <td>프론트엔드</td>
+            <td>HTML, CSS, JavaScript</td>
+        </tr>
+        <tr>
+            <td>백엔드</td>
+            <td>사용되지 않음 (정적 웹사이트)</td>
+        </tr>
+        <tr>
+            <td>기타 도구</td>
+            <td>Git, GitHub Pages (배포)</td>
+        </tr>
+    </table>
+
+    <h3>테스트 및 검증</h3>
+    <table>
+        <tr>
+            <th>테스트 계획</th>
+            <td>
+                <ul>
+                    <li>크로스 브라우저 테스트: Chrome, Firefox, Safari 등 주요 브라우저에서의 호환성 테스트</li>
+                    <li>반응형 테스트: 다양한 화면 크기(모바일, 태블릿, 데스크탑)에서의 UI/UX 테스트</li>
+                    <li>기능 테스트: 주요 기능(팝업, 검색, 로그인 등)의 정상 작동 여부 테스트</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>테스트 결과</th>
+            <td>
+                <ul>
+                    <li>주요 브라우저에서 정상 작동 확인</li>
+                    <li>모바일, 태블릿, 데스크탑에서 모두 원활한 사용자 경험 제공</li>
+                    <li>팝업 및 검색 기능 정상 작동 확인</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>해결 방안</th>
+            <td>
+                <ul>
+                    <li>초기 테스트에서 발견된 레이아웃 문제 수정</li>
+                    <li>검색 기능의 속도 최적화</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <
 
