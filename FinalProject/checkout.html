@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AaT-okwZYV3f9OFUMuv9PubIm8E5adtiB05v1ip4cyQkMYBmGXx6RSux7_V8BhllDGudHQG4MA8uZuXf"></script>
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: 'Century Gothic', Arial, Helvetica, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+        .btn-primary, .btn-secondary, .btn {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .btn {
+            background-color: #1F5F3F;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .checkout-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .checkout-item:last-child {
+            border-bottom: none;
+        }
+
+        #paypal-button-container {
+            width: 50%; /* Adjust width for PayPal button */
+            margin: 0 auto; /* Center align PayPal button */
+            text-align: center; /* Center align PayPal button */
+        }
+
+        #card-button {
+            width: 50%; /* Adjust width for card button */
+            margin: 0 auto; /* Center align card button */
+            text-align: center; /* Center align card button */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Checkout</h2>
+        <form>
+            <h4>Contact</h4>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" id="shippingUpdates" checked>
+                    <label class="form-check-label" for="shippingUpdates">Get shipping updates by email</label>
+                </div>
+            </div>
+            
+            <h4>Delivery</h4>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country/Region</label>
+                <select class="form-select" id="country" required>
+                    <option selected>South Korea</option>
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <!-- Add more countries as needed -->
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="lastName" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Last name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="firstName" class="form-label">First name (optional)</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="First name">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="postalCode" class="form-label">Postal code</label>
+                <input type="text" class="form-control" id="postalCode" placeholder="Postal code" required>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="province" class="form-label">Province</label>
+                    <input type="text" class="form-control" id="province" placeholder="Province" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="City" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="Address" required>
+            </div>
+            <div class="mb-3">
+                <label for="apartment" class="form-label">Apartment, suite, etc. (optional)</label>
+                <input type="text" class="form-control" id="apartment" placeholder="Apartment, suite, etc.">
+            </div>
+
+        </form>
+    </div>
+
+    <div class="container">
+        <h4>Summary</h4>    
+        <div id="checkout-container"></div>
+        <div class="d-flex justify-content-between mt-3">
+            <h5>Total</h5>
+            <h5 id="total-price">₩0</h5>
+        </div>
+        <hr>
+        <div id="paypal-button-container" class="paypal-button-container"></div>
+        <button id="cancel-button" class="btn btn-secondary">Cancel</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let totalPrice = 0; // Initialize total price
+    
+            // Retrieve cart items from localStorage
+            const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    
+            // Display items in the checkout container
+            const checkoutContainer = document.getElementById("checkout-container");
+            const totalPriceElement = document.getElementById("total-price");
+    
+            // If cart is empty, show appropriate message
+            if (cartItems.length === 0) {
+                checkoutContainer.innerHTML = "<p>Your cart is empty.</p>";
+            } else {
+                // Loop through cart items and display them
+                cartItems.forEach(item => {
+                    const checkoutItem = document.createElement("div");
+                    checkoutItem.classList.add("checkout-item", "d-flex", "justify-content-between");
+                    checkoutItem.innerHTML = `
+                        <span>${item.name}</span>
+                        <span>${item.price}</span>
+                    `;
+                    checkoutContainer.appendChild(checkoutItem);
+    
+                    // Calculate total price
+                    const itemPrice = parseFloat(item.price.replace(/[^0-9.-]+/g,""));
+                    totalPrice += itemPrice;
+                });
+    
+                // Update total price display
+                totalPriceElement.textContent = `₩${totalPrice.toLocaleString()}`;
+            }
+
+            const exchangeRate = 0.00072;
+            const totalPriceUSD = totalPrice * exchangeRate;
+    
+            // Render PayPal button after items are displayed
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                currency_code: 'USD',
+                                value: totalPriceUSD.toFixed(2) // Ensure two decimal places for USD
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        alert('Transaction completed by ' + details.payer.name.given_name);
+                        // Call your server to save the transaction if necessary
+                    });
+                }
+            }).render('#paypal-button-container');
+    
+            // Handle cancel button click
+            const cancelButton = document.getElementById("cancel-button");
+            cancelButton.addEventListener("click", function() {
+                window.close(); // Close the window or handle cancellation as needed
+            });
+        });
+    </script>
+</body>
+</html>

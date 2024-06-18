@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Glasses Repair</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+  <style>
+    @media (max-width: 600px) {
+      .search-form {
+        display: none !important;
+      }
+      .navbar-collapse.show .search-form {
+        display: flex !important;
+      }
+    }
+    @media (max-width: 900px){
+       .bi-caret-left-fill, .bi-caret-right-fill {
+        display: none !important;
+      }
+    }
+    nav {
+    background-color: #1F5F3F;
+}
+
+.navbar-brand img {
+    text-align: left;
+
+}
+
+.nav-link {
+    color: rgb(255, 255, 255, 0.5);
+    margin-left: 10px;
+}
+.nav-link.active {
+    color: white; /* Ensures active link color is white */
+}
+
+body {
+    font-family: 'Century Gothic', Arial, Helvetica, sans-serif;
+  }
+
+.search-form .form-control{
+    background-color: rgba(255, 255, 255, 0.5); /* 50% transparent white */
+    border-radius: 10px; /* Optional: add border radius for rounded corners */
+    border: none;
+}
+.btn {
+    background-color: rgb(50, 47, 47);
+    border-radius: 10px; /* Optional: add border radius for rounded corners */
+    border: none;
+    color: white;
+}
+.btn:hover{
+    background-color: #1F5F3F;
+    color: white;
+}
+.btn.clicked{
+    background-color: #1F5F3F;
+    color: white;
+}
+body {
+font-family: 'Century Gothic', Arial, Helvetica, sans-serif;
+}
+.main h3{
+color: #1F5F3F;
+text-align: center;
+margin-top: 40px;
+margin-bottom: 30px;
+margin-left: 20px;
+}
+.main p{
+text-align: left;
+padding-left: 125px;
+padding-right: 125px;
+}
+.main1 {
+background-color: #e7e7e7;
+}
+
+.submit button {
+background-color: rgb(50, 47, 47);
+border-radius: 10px; /* Optional: add border radius for rounded corners */
+border: none;
+color: white;
+text-decoration: none;
+text-align: center;
+margin-left: 45%;
+margin-top: 15px;
+margin-bottom: 15px;
+}
+
+.btn-success.clicked{
+background-color: #1F5F3F;
+color: white;
+}
+.col-md li{
+margin-top: 20px;
+font-size: larger;
+}
+
+.col-md ul {
+margin-top: 80px;
+}
+.submit h4 {
+text-align: center;
+color: #1F5F3F;
+}
+
+.submit h3{
+    text-align: center;
+    color: #1F5F3F;
+    margin-bottom: 20px;
+}
+.col-md img{
+border-radius: 15px;
+background-color: #1F5F3F;
+}
+</style>
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm">
+  <div class="container-fluid " id="demo">
+    <a class="navbar-brand" href="lavue.html">
+      <img src="img/IMG_2078-removebg-preview 4.png" alt="La Vue" style="width:100px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown">Catalog</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="eyewear.html">Eyewear</a></li>
+            <li><a class="dropdown-item" href="accessor.html">Accessories</a></li>
+            <li><a class="dropdown-item" href="contactlens.html">Contact Lenses</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="repair2.html">Glasses Repair</a></li>
+            <li><a class="dropdown-item" href="customeyewear.html">Custom Eyewear</a></li>
+            <li><a class="dropdown-item" href="childconsultation.html">Children's consultation</a></li>
+            <li><a class="dropdown-item" href="consultation.html">Consultation</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="lavue.html#doctor">Doctors</a>
+        </li>  
+        <li class="nav-item">
+          <a class="nav-link" href="lavue.html#store">Store</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="lavue.html">About</a>
+        </li> 
+      </ul>
+      <form class="d-flex ms-auto search-form">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">
+            <i class="bi bi-search"></i>
+        </button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+                <a class="nav-link" href="signin.html" style="padding-right: 20px;">Sign Up</a>
+            </li>
+            <li class="nav-item">
+                <button class="btn btn-outline-light" type="button">
+                    <i class="bi bi-bag-fill"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid main">
+    <h3 class="text">Repair of glasses and frames</h3>
+    <p class="text" style="margin-bottom: 20px; text-align: center;">Do you remember how much time you spent picking the perfect pair of glasses? And then you accidentally sat on them or dropped them? Do not worry about having to buy new eyewear again - bring your broken item to "La Vue Optics" company in Taraz</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md">
+                <img src="img/Glasses repair and Sunglasses repairs service - Peep Eyewear.jpeg" style="float: left; width: 300px; height: 400px; margin-right: 80px; margin-bottom: 40px; margin-left: 123px; margin-top: 15px;">
+                <ul>
+                    <li>We will replace a new frame bolt;</li>
+                    <li>We will change the cord;</li>
+                    <li>We will replace the nose pad;</li>
+                    <li>We will adjust them;</li>
+                    <li>We will install new lenses;</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid submit" id="submit" style="background-color: #e7e7e7; padding: 30px;">
+    <h3><b>Have a repair request?</b></h3>
+    <h4>Ask us now, and we will respond within 2 hours. Submit your repair request below.</h4>
+     <button type="button" class="btn btn-success" id="whatsapp"><i class="bi bi-whatsapp"></i> Submit</button>
+</div>
+<div class=" p-4 bg-dark text-white text-center">
+    <div class="flex-container footer"><p>© 2022 La Vue</p>
+    </div>
+</div>
+<script>
+    document.getElementById('whatsapp').onclick = function() {
+      window.open('https://wa.me/77084509617', '_blank');
+    }
+  </script>
+</body>
+</html>

@@ -1,24 +1,20 @@
-<!DOCTYPE html> 
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Sign Up</h1> 
-    <p id="demo"></p>
-  
-    <script>
-       const fruits = ["Banana", "Orange", "Apple", "Mango"]; 
-       let text = "<ul>"; 
-        fruits.forEach(myFunction);
-        text += "</ul>";
-        function myFunction(value) {
-            text += "<li>" + value + "</li>";
-        }
-        
-    </script>
+    <label for="firstText">first name:</label>
+    <input id="firstText"><br>
+    <label for="lastText">last name:</label>
+    <input id="lastText"><br>
+    <button id="submitBtn">submit</button>
+    <button id="cookieBtn">get cookies</button>
+    <script src="index.js"></script>
 </body>
 </html>
 
